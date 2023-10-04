@@ -7,13 +7,13 @@ CREATE TABLE IF NOT EXISTS sayur (
   tanggal_input DATETIME
 ) ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS pasar(
-  id_pasar INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  id_pasar VARCHAR(10) NOT NULL PRIMARY KEY,
   nama_pasar VARCHAR(30) NOT NULL
 ) ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS deteksi (
   id_deteksi INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   id_sayur INT NOT NULL,
-  id_pasar INT NOT NULL,
+  id_pasar VARCHAR(10) NOT NULL,
   hasil_deteksi VARCHAR(30),
   FOREIGN KEY (id_sayur) REFERENCES sayur(id_sayur),
   FOREIGN KEY (id_pasar) REFERENCES pasar(id_pasar)
