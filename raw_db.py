@@ -1,10 +1,9 @@
-import json
 import sqlite3
 
 
 class VeggieDettectBackend:
     def __init__(data):
-        data.conn = sqlite3.connect("cobaServer.db")
+        data.conn = sqlite3.connect("RawServer.db")
         data.cursor = data.conn.cursor()
         data.create_tables()  # Panggil fungsi ini untuk membuat tabel jika belum ada
 
